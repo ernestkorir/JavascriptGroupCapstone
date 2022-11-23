@@ -1,11 +1,11 @@
 import HelperFuncs from './helpers.js';
+
 class Movies {
   constructor() {
     this.API_BASE_URL = 'https://api.tvmaze.com/';
-    this.LIKES_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4dyq58hiPupb0utce3OK/likes'
+    this.LIKES_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4dyq58hiPupb0utce3OK/likes';
     this.movies = [];
-    this.likes =[];
-
+    this.likes = [];
   }
 
   addLike = async (itemId, likeButton) => {
@@ -26,7 +26,6 @@ class Movies {
   getLikes = async () => {
     this.likes = await fetch(this.LIKES_URL).then((response) => response.json());
   }
-  
 
     getMovieList = async (key) => {
       const Query = `search/shows?q=${key}`;
