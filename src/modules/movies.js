@@ -1,3 +1,6 @@
+import {addCommentPopupEvent} from './comments.js';
+// import {displayDetails} from './comments.js';
+
 class Movies {
   constructor() {
     this.API_BASE_URL = 'https://api.tvmaze.com/';
@@ -28,7 +31,7 @@ class Movies {
                 <span> <i class="fa fa-heart" data-id=${curr.show.id}></i> 0 Likes</span>
               </div>
               <div class="d-flex space-around mb-1">
-                <button class="btn" data-id=${curr.show.id}>Comments</button>
+                <button class="btn" id="${curr.show.id}">Comments</button>
               </div>
             </div>
           </div>
@@ -37,6 +40,7 @@ class Movies {
         return prev;
       }, '');
       document.querySelector('.movies-list').innerHTML = list;
+      addCommentPopupEvent();
     }
 }
 

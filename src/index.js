@@ -1,11 +1,9 @@
 import './index.css';
 import Movies from './modules/movies.js';
-import Comments from './modules/comments';
+import './modules/movies.js';
+import './modules/comments.js';
 
 const movies = new Movies();
-const comments = new Comments();
 
 movies.displayMovies();
-comments.showComments();
-
-
+addCommentPopupEvent();

@@ -21,8 +21,60 @@
             <h1 class="mt-1">Movie App</h1>
             <div class="d-flex movies-list space-around mt-1" id="movieList">
             </div>
-            <div class="popup">comments</div>
+            <section class="card-modal" id="modal">
+            </section>
         </main>
+
+        <!-- <div class="modal-wraper" id="modal-wrap">
+          <div class='movie-pop-up'>
+                <div class="mclose-btn">  
+                <button onclick='modalClose()' id='close-modal'>
+                <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                </button>
+                </div>
+                
+                <div class= 'modal-image'>
+                <img
+                src = "${details.image}";
+                alt = "cover image"
+                id = "modal-cover"
+                />
+                </div>
+                <div class= "modal-head">
+                    <div class = "summary">${details.summary}</div>
+                </div>
+                
+                <div class = "movie-attributes">
+                    <ul>
+                    <li><span>Name:</span>${details.name}</li>
+                    <li><span>Country:</span>${details.country}</li>
+                    </ul>
+                    <ul>
+                    <li><span>Genre:</span>${details.genre}</li>
+                    <li><span>Release:</span>${details.release}</li>
+                    </ul>
+                </div>
+                
+                <div class= "comment-display">
+                    <h2>Comments</h2>
+                    <ul id="comments-section">
+                    <li>11/23/2022 Comments</li>
+                    <li>11/23/2022 Comments</li>
+                    <li>11/23/2022 Comments</li>
+                    </ul>
+                </div>
+                
+                <div class="add-comment">
+                <h2>Add Comment</h2>
+                    <ul>
+                    <li><input type="text" id="finput" placeholder="Your Name" ></input></li>
+                    <li><textarea id="linput" cols="30" rows="10" placeholder="Your insights"></textarea></li>
+                    <li><button id="submit" onclick="submitValue(`${id}`)">Comment</button></li>
+                    </ul>
+                </div>
+          </div>
+        </div>
+  -->
         <footer>
             <p>Created by Victoria and Ernest under CC license</p>
         </footer>
