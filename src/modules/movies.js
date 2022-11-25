@@ -33,6 +33,8 @@ class Movies {
       this.movies = [...this.movies, ...list];
     }
 
+    getMovieCount = () => this.movies.length;
+
     displayMovies = async () => {
       await this.getMovieList('birds');
       await this.getMovieList('boys');
@@ -65,6 +67,7 @@ class Movies {
         return prev;
       }, '');
       document.querySelector('.movies-list').innerHTML = list;
+      document.querySelector('.title span').innerHTML = this.getMoviesCount(this.movies);
       HelperFuncs.registersLikeButtons(this);
     }
 }
