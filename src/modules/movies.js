@@ -24,7 +24,7 @@ class Movies {
   }
 
   getMoviesCount = () => this.movies.length;
-  
+
   getLikes = async () => {
     this.likes = await fetch(this.LIKES_URL).then((response) => response.json());
   }
