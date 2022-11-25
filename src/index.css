@@ -101,3 +101,20 @@ footer {
 li {
   list-style: none;
 }
+
+.comment-li {
+  margin: 0.6rem 0;
+}
+
+.comment-li span {
+  display: flex;
+  font-size: 1.1rem;
+  margin-left: 1.5rem;
+}
+
+#comments-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,3 +1,5 @@
+import { generateComment } from './display-comments.js';
+
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
   const list = await fetch(`${baseApi}${id}`).then((response) => response.json());
@@ -43,8 +45,8 @@ export const createPopUpDetails = (details) => {
       </ul>
   </div>
   
+  <h2>Comments</h2>
   <div class= "comment-display">
-      <h2>Comments</h2>
   </div>
   
   <div class="add-comment">
@@ -60,6 +62,11 @@ const displayPoUp = async (id) => {
 
   const movieDetail = await fillDetails(id);
   popupModal.append(createPopUpDetails(movieDetail));
+
+  const commentsDiv = document.querySelector('.comment-display');
+
+  const commentul = await generateComment(id);
+  commentsDiv.append(commentul);
 
   popupModal.style.display = 'flex';
   addClosePopUpevent();
