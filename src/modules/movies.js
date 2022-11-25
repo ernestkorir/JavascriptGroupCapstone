@@ -1,4 +1,4 @@
-import {addCommentPopupEvent} from './comments.js';
+import { addCommentPopupEvent } from './comments.js';
 // import {displayDetails} from './comments.js';
 
 class Movies {
