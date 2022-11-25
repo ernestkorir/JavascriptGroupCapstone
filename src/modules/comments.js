@@ -21,15 +21,17 @@ export const createPopUpDetails = (details) => {
   <span class="close-span">X</span>  
   </div>
   
+  <div class="popup-top-section">
   <div class= 'modal-image'>
   <img
-  src = "${details.url}";
-  alt = "cover image"
-  id = "modal-cover"
+  src="${details.image.medium}";
+  alt="cover image"
+  id="modal-cover"
   />
   </div>
   <div class= "modal-head">
       <div class = "summary">${details.summary}</div>
+  </div>
   </div>
   
   <div class = "movie-attributes">
