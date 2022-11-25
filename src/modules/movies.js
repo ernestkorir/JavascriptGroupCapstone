@@ -1,3 +1,5 @@
+import { addCommentPopupEvent } from './comments.js';
+// import {displayDetails} from './comments.js';
 import HelperFuncs from './helpers.js';
 
 class Movies {
@@ -56,7 +58,7 @@ class Movies {
                </div>
               </div>
               <div class="d-flex space-around mb-1">
-                <button class="btn" data-id=${curr.show.id}>Comments</button>
+                <button class="btn" id="${curr.show.id}">Comments</button>
               </div>
             </div>
           </div>
@@ -65,6 +67,7 @@ class Movies {
         return prev;
       }, '');
       document.querySelector('.movies-list').innerHTML = list;
+      addCommentPopupEvent();
       HelperFuncs.registersLikeButtons(this);
     }
 }

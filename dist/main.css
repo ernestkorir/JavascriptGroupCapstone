@@ -37,3 +37,11 @@ footer {
   --n: 3;
 }
 
+.movie-pop-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+}
+
