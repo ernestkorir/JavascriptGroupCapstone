@@ -59,7 +59,6 @@ const displayPoUp = async (id) => {
   popupModal.innerHTML = '';
 
   const movieDetail = await fillDetails(id);
-  console.log(movieDetail);
   popupModal.append(createPopUpDetails(movieDetail));
 
   popupModal.style.display = 'flex';
