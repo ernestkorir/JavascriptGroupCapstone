@@ -41,3 +41,20 @@ export const generateComment = async (id) => {
   }
   return commentUl;
 };
+
+export const addComment = async (id, user, comment) => {
+  const newComment = {
+    item_id: id,
+    username: user,
+    comment,
+  };
+
+  const response = await fetch(`${commentApi}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newComment),
+  });
+  return response;
+};
