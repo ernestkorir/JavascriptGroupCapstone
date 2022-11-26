@@ -1,4 +1,5 @@
 import { generateComment, addComment } from './display-comments.js';
+import commentCounter from './comment-counter.js';
 
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
@@ -17,10 +18,14 @@ const addCommentEvent = async () => {
     await addComment(submitComment.id, user.value, comment.value);
 
     const commentsDiv = document.querySelector('.comment-display');
+    const commentCountSpan = document.querySelector('.comment-count');
 
     const commentul = await generateComment(submitComment.id);
     commentsDiv.innerHTML = '';
     commentsDiv.append(commentul);
+
+    const commentCount = commentCounter();
+    commentCountSpan.textContent = `(${commentCount})`;
 
     commentForm.reset();
   });
@@ -69,7 +74,7 @@ export const createPopUpDetails = (details) => {
       </ul>
   </div>
   
-  <h2>Comments</h2>
+  <h2>Comments<span class="comment-count"></span></h2>
   <div class= "comment-display">
   </div>
   
@@ -97,9 +102,13 @@ const displayPoUp = async (id) => {
   popupModal.append(createPopUpDetails(movieDetail));
 
   const commentsDiv = document.querySelector('.comment-display');
+  const commentCountSpan = document.querySelector('.comment-count');
 
   const commentul = await generateComment(id);
   commentsDiv.append(commentul);
+
+  const commentCount = commentCounter();
+  commentCountSpan.textContent = `(${commentCount})`;
 
   popupModal.style.display = 'flex';
   addCommentEvent();
