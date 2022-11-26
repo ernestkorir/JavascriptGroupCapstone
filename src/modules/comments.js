@@ -1,9 +1,29 @@
-import { generateComment } from './display-comments.js';
+import { generateComment, addComment } from './display-comments.js';
 
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
   const list = await fetch(`${baseApi}${id}`).then((response) => response.json());
   return list;
+};
+
+const addCommentEvent = async () => {
+  const commentForm = document.querySelector('.new-comment-form');
+  const submitComment = document.querySelector('.submit-btn');
+  commentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const { user } = commentForm.elements;
+    const { comment } = commentForm.elements;
+
+    await addComment(submitComment.id, user.value, comment.value);
+
+    const commentsDiv = document.querySelector('.comment-display');
+
+    const commentul = await generateComment(submitComment.id);
+    commentsDiv.innerHTML = '';
+    commentsDiv.append(commentul);
+
+    commentForm.reset();
+  });
 };
 
 const addClosePopUpevent = () => {
@@ -22,18 +42,19 @@ export const createPopUpDetails = (details) => {
   <div class="mclose-btn">
   <span class="close-span">X</span>  
   </div>
-  
+  <div class="popup-top-section">
   <div class= 'modal-image'>
   <img
-  src = "${details.url}";
-  alt = "cover image"
-  id = "modal-cover"
+  src="${details.image.medium}";
+  alt="cover image"
+  id="modal-cover"
   />
   </div>
   <div class= "modal-head">
       <div class = "summary">${details.summary}</div>
   </div>
-  
+  </div>
+
   <div class = "movie-attributes">
       <ul>
       <li><span>Name:</span>${details.name}</li>
@@ -51,6 +72,14 @@ export const createPopUpDetails = (details) => {
   
   <div class="add-comment">
   <h2>Add Comment</h2>
+
+  <div class="comments-form">
+  <form class="new-comment-form">
+  <input type="text" id="user" placeholder="name" required>
+  <textarea cols="30" rows="10" placeholder="comment" id="comment" required></textarea>
+  <button type="submit" class="submit-btn" id="${details.id}">Add Comment</button>
+  </form>
+  </div>
   </div>
 `;
   return projectModal;
@@ -61,6 +90,7 @@ const displayPoUp = async (id) => {
   popupModal.innerHTML = '';
 
   const movieDetail = await fillDetails(id);
+
   popupModal.append(createPopUpDetails(movieDetail));
 
   const commentsDiv = document.querySelector('.comment-display');
@@ -69,6 +99,7 @@ const displayPoUp = async (id) => {
   commentsDiv.append(commentul);
 
   popupModal.style.display = 'flex';
+  addCommentEvent();
   addClosePopUpevent();
 };
 
