@@ -42,6 +42,8 @@ export const createPopUpDetails = (details) => {
   <div class="mclose-btn">
   <span class="close-span">X</span>  
   </div>
+
+  
   <div class="popup-top-section">
   <div class= 'modal-image'>
   <img
@@ -55,6 +57,7 @@ export const createPopUpDetails = (details) => {
   </div>
   </div>
 
+  
   <div class = "movie-attributes">
       <ul>
       <li><span>Name:</span>${details.name}</li>
