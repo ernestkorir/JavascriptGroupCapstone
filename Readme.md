@@ -18,6 +18,12 @@ we will also need to dynamically modify the DOM and add or remove movies.
 1. clone the project from link: https://github.com/microverseinc/curriculum-tools-copy-projects.git
 2. open it on ur vs code and start using it 
 
+### Checkout the [Kanban board](https://github.com/users/ernestkorir/projects/5)
+
+### Take a look at some interesting pull Requests
+[Add details popup](https://github.com/ernestkorir/JavascriptGroupCapstone/pull/26)
+[Project setup](https://github.com/ernestkorir/JavascriptGroupCapstone/pull/22)
+
 This project has been created using **webpack-cli**, you can run
 
 ```
