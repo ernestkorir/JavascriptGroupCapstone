@@ -3,6 +3,8 @@
 In this project, we will build a basic website that allows users to add/remove movies from a list. we will achieve that by using JavaScript classes. 
 we will also need to dynamically modify the DOM and add or remove movies.
 
+[live-Demo](https://victoria129.github.io/Javascript-capstone/dist)
+
 
 ## Built With
 
