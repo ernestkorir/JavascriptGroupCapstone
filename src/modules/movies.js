@@ -70,7 +70,7 @@ class Movies {
       }, '');
       document.querySelector('.movies-list').innerHTML = list;
 
-      document.querySelector('.title span').innerHTML = this.getMoviesCount(this.movies);
+      document.querySelector('.title-span').innerHTML = this.getMoviesCount(this.movies);
       addCommentPopupEvent();
       HelperFuncs.registersLikeButtons(this);
     }
